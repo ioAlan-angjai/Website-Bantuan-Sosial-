@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Donasi Sosial - DanaSosial.org</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <div class="logo">DanaSosial.org</div>
+    <ul id="menu">
+      <li><a href="#home">Beranda</a></li>
+      <li><a href="#layanan">Layanan</a></li>
+      <li><a href="#tree-section">Distribusi Donasi</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Ambil Peran Dalam Aksi Sosial</h1>
+      <p>Ubah niat baik menjadi aksi nyata hari ini.</p>
+      <button class="cta" id="btnJadiDonatur">Mulai Donasi</button> 
+    </div>
+    
+    <div class="donasi-form-container" id="donasiFormContainer" style="display: none;">
+        <form id="donasiForm" class="donasi-popup-box">
+            <h3>Formulir Donasi Cepat</h3>
+            <p>Silakan isi data donasi Anda untuk membantu transparansi.</p>
+            
+            <div>
+                <label for="donasiName">Nama Donatur:</label>
+                <input type="text" id="donasiName" placeholder="Cth: Hamba Allah" required>
+            </div>
+            
+            <div>
+                <label for="donasiType">Tipe Donasi:</label>
+                <select id="donasiType" required>
+                    <option value="" disabled selected>Pilih Tipe</option>
+                    <option value="Donasi Uang">Donasi Uang</option>
+                    <option value="Donasi Makanan">Donasi Makanan (Barang)</option>
+                </select>
+            </div>
+
+            <div id="targetUangFields" class="donasi-fields">
+                <label for="targetBank">Target Bank:</label>
+                <select id="targetBank">
+                    <option value="" disabled selected>Pilih Bank Tujuan</option>
+                    <option value="Bank BRI">Bank BRI</option>
+                    <option value="Bank BNI">Bank BNI</option>
+                </select>
+            </div>
+
+            <div id="targetMakananFields" class="donasi-fields" style="display: none;">
+                <label for="targetMakanan">Jenis Makanan:</label>
+                <select id="targetMakanan">
+                    <option value="" disabled selected>Pilih Jenis Makanan</option>
+                    <option value="Bahan Mentah">Bahan Mentah</option>
+                    <option value="Makanan Siap Saji">Makanan Siap Saji</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="donasiAmount"><span id="amountLabel">Nominal (Rp):</span></label>
+                <input type="number" id="donasiAmount" min="1" required>
+            </div>
+            
+            <div>
+                <label for="donasiDesc">Keterangan:</label>
+                <input type="text" id="donasiDesc" placeholder="Cth: Transfer via Mobile Banking / 5 Kardus Mie Instan">
+            </div>
+
+            <div class="form-buttons">
+                <button type="button" class="btn btn-secondary" id="cancelDonasiButton">Batal</button>
+                <button type="submit" class="btn btn-primary">Donasi Sekarang</button>
+            </div>
+        </form>
+    </div>
+  </section>
+  
+  <section class="layanan-section" id="layanan">
+    <h2>🤝 Aksi Nyata Kami: Menyalurkan Kebahagiaan</h2>
+    <p class="subtitle">Setiap donasi Anda, baik berupa uang maupun makanan, kami salurkan melalui jalur yang transparan dan tepat sasaran. Berikut adalah fokus utama pelayanan kami:</p>
+    
+    <div class="layanan-container">
+      
+      <div class="layanan-card">
+        <div class="layanan-icon">🏠</div>
+        <h3>Panti Asuhan & Yayasan Anak</h3>
+        <p>Memberikan dukungan penuh untuk kebutuhan sehari-hari, pendidikan, dan fasilitas yang layak bagi anak-anak yatim piatu dan kurang mampu.</p>
+        <div class="layanan-detail">
+          <p>Fokus: Pendidikan, Nutrisi, dan Pengembangan Diri.</p>
+        </div>
+      </div>
+      
+      <div class="layanan-card">
+        <div class="layanan-icon">👵👴</div>
+        <h3>Panti Jompo & Lansia Terdampak</h3>
+        <p>Menjamin kenyamanan dan kesehatan para lansia yang membutuhkan perhatian ekstra, menyediakan makanan bergizi, obat-obatan, serta kebutuhan sosial mereka.</p>
+        <div class="layanan-detail">
+          <p>Fokus: Kesehatan, Kebersihan, dan Dukungan Emosional.</p>
+        </div>
+      </div>
+      
+      <div class="layanan-card">
+        <div class="layanan-icon">👨‍👩‍👧‍👦</div>
+        <h3>Masyarakat Tidak Mampu & Bencana</h3>
+        <p>Penyaluran cepat berupa sembako, makanan siap saji, dan bantuan finansial kepada keluarga prasejahtera dan korban bencana alam yang membutuhkan uluran tangan segera.</p>
+        <div class="layanan-detail">
+          <p>Fokus: Kebutuhan Primer (Sandang, Pangan, Papan).</p>
+        </div>
+      </div>
+      
+    </div>
+    
+    <div class="layanan-cta">
+        <p>Donasi Anda adalah harapan bagi mereka. Mari wujudkan senyum bersama!</p>
+        <button class="cta" onclick="document.getElementById('btnJadiDonatur').click()">Donasi Sekarang</button>
+    </div>
+  </section>
+  
+  <section class="tree-section" id="tree-section">
+    <h2>Peta Distribusi Donasi</h2>
+    
+    <div id="aggregation-display" class="aggregation-container">
+        </div>
+    
+    <div class="tree-container-wrapper">
+      <div id="tree" class="tree">
+        </div>
+      
+      <div class="info-box">
+        <h3 id="infoText">Detail Node</h3>
+        
+        <div id="info-details">
+          <p>Klik salah satu Node di samping kiri untuk melihat detail dan mengelola strukturnya.</p>
+          <p id="totalRecursiveAmount" style="font-weight: bold;"></p>
+        </div>
+
+        <form id="addNodeForm" class="add-node-form" style="display: none;">
+          <h3 id="formTitle">Formulir Node</h3>
+          
+          <input type="hidden" id="formMode" value="add">
+          <input type="hidden" id="originalNodeName" value="">
+          <input type="hidden" id="parentName" value="">
+          
+          <div>
+            <label for="nodeName">Nama Node Baru:</label>
+            <input type="text" id="nodeName" required>
+          </div>
+          <div>
+            <label for="nodeType">Tipe Node:</label>
+            <input type="text" id="nodeType" placeholder="cth: Penerima, Donatur, ...">
+          </div>
+          <div>
+            <label for="nodeDesc">Keterangan:</label>
+            <input type="text" id="nodeDesc">
+          </div>
+          <div>
+            <label for="nodeAmount">Nominal (Rp/Pcs):</label>
+            <input type="number" id="nodeAmount" min="0">
+          </div>
+          <div class="form-buttons">
+            <button type="button" class="btn btn-secondary" id="cancelButton">Batal</button>
+            <button type="submit" class="btn btn-primary">Simpan</button>
+          </div>
+        </form>
+        
+      </div> 
+    </div> 
+  </section>
+  <footer>
+    <p>&copy; 2025 DanaSosial.org. Semua Hak Cipta Dilindungi.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

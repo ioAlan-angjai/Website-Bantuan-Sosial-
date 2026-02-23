@@ -1,0 +1,506 @@
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #fafafa;
+  line-height: 1.6;
+}
+html {
+    scroll-behavior: smooth;
+}
+/* Navbar */
+nav {
+  background: #c62828;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav .logo {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 5px 0;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+  height: 80vh; 
+  background: url('images/foto1.jpg') center/cover no-repeat;
+  background-color: #555; 
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  position: relative; 
+}
+
+.hero-content {
+  text-align: center;
+  color: white;
+  padding: 20px;
+  max-width: 600px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  z-index: 5;
+}
+
+.hero-content h1 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+}
+
+.hero-content p {
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
+}
+
+.cta:hover {
+  background: #a31515;
+}
+
+.cta {
+  background: #c62828;
+  color: white;
+  padding: 12px 30px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* --- Form Donasi Cepat (Popup) --- */
+
+.donasi-form-container {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); 
+    z-index: 999; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.donasi-popup-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    width: 90%;
+    max-width: 450px;
+    z-index: 1000;
+    border: 3px solid #c62828;
+}
+
+.donasi-popup-box h3 {
+    margin-top: 0;
+    color: #c62828;
+}
+
+.donasi-popup-box p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.donasi-popup-box input[type="text"],
+.donasi-popup-box input[type="number"],
+.donasi-popup-box select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-sizing: border-box; 
+  margin-top: 5px;
+}
+
+.donasi-popup-box label {
+    display: block;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+/* --- SECTION LAYANAN --- */
+.layanan-section {
+    padding: 60px 20px;
+    background: #fdfdfd; 
+    text-align: center;
+}
+
+.layanan-section h2 {
+    color: #c62828;
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+.layanan-section .subtitle {
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    font-size: 1.1em;
+}
+
+.layanan-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; 
+}
+
+.layanan-card {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: left;
+}
+
+.layanan-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.layanan-icon {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.layanan-card h3 {
+    color: #388e3c; 
+    margin-top: 0;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #e8f5e9;
+    padding-bottom: 8px;
+}
+
+.layanan-card p {
+    color: #555;
+    font-size: 0.95em;
+}
+
+.layanan-detail {
+    margin-top: 15px;
+    padding: 10px;
+    background: #fff3e0; 
+    border-radius: 5px;
+    font-style: italic;
+}
+
+.layanan-detail p {
+    margin: 0;
+    color: #e65100; 
+    font-size: 0.9em;
+}
+
+.layanan-cta {
+    margin-top: 50px;
+    padding: 20px;
+    background: #c62828;
+    color: white;
+    border-radius: 10px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.layanan-cta p {
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.layanan-cta .cta {
+    background: white;
+    color: #c62828;
+    font-weight: 700;
+    padding: 10px 25px;
+}
+
+
+/* --- Tampilan Total Donasi --- */
+.aggregation-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #e0f2f1; 
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    max-width: 900px;
+}
+
+.summary-card {
+    background: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    flex: 1; 
+}
+
+.summary-card h4 {
+    color: #00796b; 
+    margin-top: 0;
+    font-size: 16px;
+}
+
+.summary-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+}
+
+
+/* Tree Section */
+.tree-section {
+  padding: 40px 20px;
+  background: white;
+}
+
+.tree-section h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.tree-container-wrapper {
+  display: flex;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tree {
+  flex: 2;
+  border: 1px solid #ddd;
+  padding: 20px;
+  overflow-x: auto; 
+  background: #f7f7f7;
+  min-height: 500px; 
+}
+
+
+
+.tree ul {
+    list-style-type: none; 
+    padding-left: 0;
+    position: relative;
+    /* Membuat aliran vertikal */
+    display: block; 
+}
+
+.tree li {
+    position: relative;
+    padding: 0;
+    /* Membuat label dan anak menjadi tumpukan vertikal */
+    display: block;
+    text-align: left;
+    /* Memberi ruang di sebelah kiri untuk garis */
+    margin-left: 0; 
+}
+
+/* Indentasi Vertikal untuk setiap level anak */
+.tree li ul {
+    /* Indentasi yang membuat anak bergeser ke kanan */
+    padding-left: 30px; 
+}
+
+.tree-node-label {
+    display: inline-block;
+    padding: 8px 12px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    min-width: 180px; /* Lebar node */
+    text-align: left; /* Teks di dalam node rata kiri */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.2s, transform 0.2s;
+    z-index: 2; 
+    white-space: nowrap; 
+    margin: 5px 0; /* Jarak vertikal antar node */
+}
+
+.tree-node-label:hover {
+    background-color: #ffe0b2; 
+    transform: none; /* Nonaktifkan efek hover vertikal */
+}
+
+
+/* Garis Koneksi: Rata Kiri Vertikal */
+
+/* Garis L (L-shape) dan T (T-shape) konektor */
+.tree li:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-left: 1px solid #aaa; /* Garis Vertikal */
+    height: 100%;
+    width: 0;
+}
+
+.tree li:after {
+    content: '';
+    position: absolute;
+    top: 15px; /* Posisi horizontal line */
+    left: 0;
+    border-top: 1px solid #aaa; /* Garis Horizontal */
+    width: 15px; /* Panjang garis horizontal */
+    height: 0;
+}
+
+/* Modifikasi Garis (Penyesuaian Visual) */
+
+/* Garis Vertikal pada UL (menggantikan Garis L pada LI anak) */
+.tree ul:not(:first-child) li:before {
+    left: -15px; /* Geser ke kiri untuk menjangkau garis parent */
+    height: 100%;
+    border-color: #aaa;
+}
+
+/* Modifikasi garis horizontal */
+.tree ul:not(:first-child) li:after {
+    left: -15px; 
+    width: 15px;
+    top: 18px; 
+}
+
+/* Root UL (Tidak ada garis di sebelah kiri) */
+.tree > ul {
+    padding-left: 0; 
+}
+
+.tree > ul > li:before,
+.tree > ul > li:after {
+    content: none; /* Hapus garis untuk Root Node */
+}
+
+/* Garis vertikal di node terakhir (Daun) harus berhenti di tengah node */
+.tree li:last-child:before {
+    /* Hitung posisi vertikal yang akan memotong garis */
+    height: 18px; /* Tinggi = 5px margin + 8px padding + 2px border + 3px (perkiraan) */
+}
+
+/* INFO BOX dan FORM ADMIN (Tetap sama) */
+
+.info-box {
+  flex: 1;
+  border: 1px solid #ddd;
+  padding: 20px;
+  background: #f9f9f9;
+}
+
+.info-box h3 {
+  color: #c62828;
+}
+
+/* Tombol */
+.btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn-primary { 
+  background: #388e3c;
+}
+
+.btn-secondary { 
+  background: #757575;
+}
+
+.btn-danger { 
+  background: #b71c1c;
+}
+
+.btn-warning { 
+  background: #f57f17;
+}
+
+/* Form Admin */
+.add-node-form {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.add-node-form h3 {
+  margin-top: 0;
+}
+
+.add-node-form div {
+  margin-bottom: 15px;
+}
+
+.add-node-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #444;
+}
+
+.add-node-form input[type="text"],
+.add-node-form input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-sizing: border-box; 
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #c62828;
+  color: white;
+}
